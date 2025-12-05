@@ -1,1 +1,77 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Colchões e Sonhos - Prime Casa</title>
+   
+    <style>
+        /* ================================
+           CONFIGURAÇÕES GERAIS DO SITE
+           ================================ */
+        body {
+            font-family: "Times New Roman", sans-serif;
+            background-color: #272727;
+            color: #c4c4c4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        header, footer {
+            text-align: center;
+            padding: 20px; 
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        /* ================================
+           ÁREA DOS QUADRADOS
+           ================================ */
+        .product {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr); /* 5 colunas iguais */
+            column-gap: 5px;  /* distância lateral */
+            row-gap: 25px;    /* distância vertical entre linhas */
+            justify-items: center;
+            padding: 10px;
+        }
+
+        /* ================================
+           CAIXA DE CADA QUADRADO
+           ================================ */
+        .item {
+            width: 100%;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            text-align: center;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+
+        /* ================================
+           IMAGENS DOS QUADRADOS
+           ================================ */
+        .item img {
+            width: 100%;
+            height: 250px; /* Todas do mesmo tamanho */
+            object-fit: cover;
+            border-radius: 6px;
+        }
+
+        /* ================================
+           LINK DO RODAPÉ
+           ================================ */
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            color: #9b987a;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
 
