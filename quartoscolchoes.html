@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="PT-BR">
 <head>
@@ -7,46 +6,75 @@
     <title>Quartos e Colchões - Prime Casa</title>
    
     <style>
+        /* ================================
+           CONFIGURAÇÕES GERAIS DO SITE
+           ================================ */
+
         body {
-            font-family: "Times New Roman", sans-serif;
-            background-color: #272727;
-            color: #c4c4c4;
+            font-family: "Times New Roman", sans-serif; /* Fonte do texto */
+            background-color: #272727; /* Cor escura do fundo */
+            color: #c4c4c4; /* Cor clara para o texto */
             margin: 0;
             padding: 20px;
         }
 
         header, footer {
-            text-align: center;
-            padding: 20px;
+            text-align: center; /* Centraliza texto */
+            padding: 20px; 
         }
 
         h1 {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 30px; /* Espaçamento abaixo do título */
         }
+
+        /* ================================
+           ÁREA ONDE FICAM OS QUADRADOS
+           ================================ */
 
         .product {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
+            display: grid; /* Usa grid, deixando tudo igual */
+            grid-template-columns: repeat(5, 1fr); 
+            /* ↑ 5 colunas na linha, todas do mesmo tamanho */
+
+            gap: 5px 8px; 
+            /* ↑ Espaçamento entre quadrados
+                 5px = esquerda/direita
+                 8px = cima/baixo */
+
+            justify-items: center; /* Centraliza os itens dentro da grid */
+            padding: 10px;
         }
+
+        /* ================================
+           CAIXA DE CADA QUADRADO
+           ================================ */
 
         .item {
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-            max-width: 300px;
-            text-align: center;
+            width: 100%; /* Quadrado ocupa toda a coluna */
+            background-color: #ffffff; /* Fundo branco */
+            border-radius: 8px; /* Bordas arredondadas */
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3); /* Sombra bonita */
+            text-align: center; /* Texto centralizado */
             padding: 15px;
+            box-sizing: border-box; /* Mantém tamanho correto */
         }
 
+        /* ================================
+           IMAGENS DOS QUADRADOS
+           ================================ */
+
         .item img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
+            width: 100%; /* Sempre preencher toda a largura */
+            height: 250px; /* Todas ficam IGUAIS no tamanho */
+            object-fit: cover; 
+            /* ↑ Corta suavemente para manter proporção */
             border-radius: 6px;
         }
+
+        /* ================================
+           LINK DO RODAPÉ
+           ================================ */
 
         a {
             display: inline-block;
@@ -56,42 +84,83 @@
         }
 
         a:hover {
-            text-decoration: underline;
+            text-decoration: underline; /* Sublinhar ao passar o mouse */
         }
     </style>
 
 </head>
 <body>
     
+    <!-- TÍTULO DA PÁGINA -->
     <header>
         <h1>Quartos e Colchões</h1>
         <p>Shopping CasaPark Brasília • (61) 3233-1464</p>
     </header>
 
+    <!-- ÁREA DOS PRODUTOS (10 QUADRADOS NO TOTAL) -->
     <section class="product">
+
+        <!-- ================================
+             LINHA 1 (5 itens)
+             ================================ -->
 
         <div class="item">
             <img src="https://www.ortobom.com.br/cdn/shop/files/colchao-airtech-spring-ortobom-vista-frontal.png" alt="Colchão">
-            <h3>Colchão AirTech Spring</h3>
+            <h3>AirTech Spring</h3>
         </div>
 
         <div class="item">
             <img src="https://a-static.mlcdn.com.br/450x450/colchao-queen-size-ortobom-molas-pocket-physiopillow-158x198x32-cm-ortobom/ortobom/21311053/46ff17cb8dd7c7ab9cb7ffa8ea93087b.jpeg" alt="Colchão">
-            <h3>Colchão Physio Pillow</h3>
+            <h3>Physio Pillow</h3>
         </div>
 
         <div class="item">
             <img src="https://images.ortobom.com.br/unsafe/600x600/filters:quality(100)/https://ortobom.vtexassets.com/arquivos/ids/314982/colchao-molas-pocket-spring-resort.jpg" alt="Colchão">
-            <h3>Colchão Resort Pocket</h3>
+            <h3>Resort Pocket</h3>
         </div>
 
         <div class="item">
             <img src="https://images.kalunggdl.com.br/unsafe/700x700/https://img.kalunggdl.com.br/produtos/7896388501496/7896388501496_01.jpg" alt="Colchão">
-            <h3>Colchão Exclusive Bamboo</h3>
+            <h3>Exclusive Bamboo</h3>
+        </div>
+
+        <div class="item">
+            <img src="https://www.ortobom.com.br/cdn/shop/files/ortobom-spring-gray.jpg" alt="Colchão">
+            <h3>Spring Gray</h3>
+        </div>
+
+        <!-- ================================
+             LINHA 2 (5 itens)
+             ================================ -->
+
+        <div class="item">
+            <img src="https://www.ortobom.com.br/cdn/shop/files/colchao-excellence-molas-nano.jpg" alt="Colchão">
+            <h3>Excellence Nano</h3>
+        </div>
+
+        <div class="item">
+            <img src="https://acdn.mitiendanube.com/stores/001/076/622/products/colchao-casal-molas-nano.jpg" alt="Colchão">
+            <h3>Nano Molas</h3>
+        </div>
+
+        <div class="item">
+            <img src="https://acdn.mitiendanube.com/stores/003/315/076/products/colchao-viscoelastic.jpg" alt="Colchão">
+            <h3>ViscoElastic</h3>
+        </div>
+
+        <div class="item">
+            <img src="https://www.ortobom.com.br/cdn/shop/files/colchao-espuma-liberty.jpg" alt="Colchão">
+            <h3>Liberty Foam</h3>
+        </div>
+
+        <div class="item">
+            <img src="https://www.ortobom.com.br/cdn/shop/files/colchao-ortopedico-premium.jpg" alt="Colchão">
+            <h3>Ortopédico Premium</h3>
         </div>
 
     </section>
 
+    <!-- RODAPÉ -->
     <footer>
         <a href="index.html">← Voltar para a página inicial</a>
     </footer>
