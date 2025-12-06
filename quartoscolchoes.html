@@ -1,134 +1,213 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Quartos e Colchões - Prime Casa</title>
+<style>
+/* ===== GALERIA 3 POR LINHA ===== */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    padding: 30px;
+    justify-items: center;
+}
 
-    <style>
+/* ===== QUADRADOS ===== */
+.item {
+    width: 260px;
+    background: white;
+    border-radius: 12px;
+    padding: 12px;
+    cursor: pointer;
+    transition: .2s;
+    text-align: center;
+}
 
-        body {
-            font-family: "Times New Roman", sans-serif;
-            background-color: #272727;
-            color: #d4c4c4;
-            margin: 0;
-            padding: 0;
-        }
+.item:hover {
+    transform: scale(1.03);
+}
 
-        /* ======================
-           BANNER
-        =======================*/
-        .hero-header {
-            position: relative;
-            width: 100%;
-            height: 420px;
-            overflow: hidden;
-        }
+.item img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 10px;
+}
 
-        .header-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
+.item h3 {
+    margin-top: 10px;
+    color: black;
+}
 
-        .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.35);
-        }
+/* ===== MODAL POP-UP ===== */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.7);
+    backdrop-filter: blur(4px);
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+}
 
-        .header-title-center {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: white;
-            font-size: 48px;
-            font-weight: bold;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
-            text-align: center;
-        }
+.modal-content {
+    position: relative;
+    max-width: 70%;
+}
 
-        .header-info {
-            position: absolute;
-            bottom: 15px;
-            left: 20px;
-            color: #ffffff;
-            font-size: 20px;
-            text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
-        }
+.modal img {
+    width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 10px;
+}
 
-        /* ======================
-           GRID DOS PRODUTOS
-        =======================*/
-        .product {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 8px;
-            padding: 20px;
-        }
+/* ===== FECHAR ===== */
+.close-btn {
+    position: absolute;
+    top: -35px;
+    right: 0;
+    font-size: 34px;
+    cursor: pointer;
+    color: white;
+}
 
-        .item {
-            width: 100%;
-            background-color: white;
-            border-radius: 8px;
-            padding: 10px; /* borda branca ao redor da imagem */
-            box-shadow: 0 2px 8px rgba(0,0,0,0.25);
-            text-align: center;
-            box-sizing: border-box;
-        }
+/* ===== SETAS ===== */
+.arrow {
+    position: absolute;
+    top: 50%;
+    font-size: 45px;
+    color: white;
+    cursor: pointer;
+    transform: translateY(-50%);
+    user-select: none;
+}
 
-        .item img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            border-radius: 6px;
-        }
+.left-arrow { left: -60px; }
+.right-arrow { right: -60px; }
+</style>
 
-        .item h3 {
-            margin: 10px 0 0;
-            color: #000;
-        }
 
-    </style>
-</head>
+<!-- =============== GALERIA ================= -->
+<div class="gallery">
 
-<body>
+    <!-- GEORGIA (tem popup com 2 imagens) -->
+    <div class="item" onclick="openModal(0)">
+        <img src="georgia.jpeg">
+        <h3>Georgia</h3>
+    </div>
 
-    <!-- BANNER -->
-    <header class="hero-header">
-        <img src="quartos_e_colchoes_faixada.jpeg" class="header-img" alt="Fachada Prime Quartos e Colchões">
+    <!-- SOFÁ -->
+    <div class="item" onclick="openModal(1)">
+        <img src="sofa.jpeg">
+        <h3>Sofá</h3>
+    </div>
 
-        <div class="overlay"></div>
+    <!-- MESAS -->
+    <div class="item" onclick="openModal(2)">
+        <img src="mesas.jpeg">
+        <h3>Mesas</h3>
+    </div>
 
-        <div class="header-title-center">Quartos e Colchões</div>
+    <!-- MESA DE CENTRO -->
+    <div class="item" onclick="openModal(3)">
+        <img src="mesadecentro.jpeg">
+        <h3>Mesa de Centro</h3>
+    </div>
 
-        <div class="header-info">
-            Shopping Casa Park Brasília • (61) 3233-1464
-        </div>
-    </header>
+    <!-- BLACK PLUSH (tem popup com 2 imagens) -->
+    <div class="item" onclick="openModal(4)">
+        <img src="blackplush.jpeg">
+        <h3>Black Plush</h3>
+    </div>
 
-    <!-- QUADRADOS (SEM AS FAIXADAS) -->
-    <section class="product">
+    <!-- CADEIRAS -->
+    <div class="item" onclick="openModal(5)">
+        <img src="cadeiras.jpeg">
+        <h3>Cadeiras</h3>
+    </div>
 
-        <div class="item"><img src="georgia.jpeg"><h3>Georgia</h3></div>
-        <div class="item"><img src="sofa.jpeg"><h3>Sofá</h3></div>
-        <div class="item"><img src="mesas.jpeg"><h3>Mesas</h3></div>
-        <div class="item"><img src="mesadecentro.jpeg"><h3>Mesa de Centro</h3></div>
-        <div class="item"><img src="fichageorgia.jpeg"><h3>Ficha Georgia</h3></div>
+    <!-- CAMA -->
+    <div class="item" onclick="openModal(6)">
+        <img src="cama.jpeg">
+        <h3>Cama</h3>
+    </div>
 
-        <div class="item"><img src="blackpush.jpeg"><h3>Black Plush</h3></div>
-        <div class="item"><img src="cadeiras.jpeg"><h3>Cadeiras</h3></div>
-        <div class="item"><img src="fichatecblackplush.jpeg"><h3>Ficha Black Plush</h3></div>
-        <div class="item"><img src="cama.jpeg"><h3>Cama</h3></div>
-        <div class="item"><img src="mesaextra.jpeg"><h3>Mesa Extra</h3></div>
+    <!-- MESA GRANDE -->
+    <div class="item" onclick="openModal(7)">
+        <img src="mesagrande.jpeg">
+        <h3>Mesa Grande</h3>
+    </div>
 
-    </section>
+    <!-- ITEM EXTRA (sobra 1 sozinho na última linha) -->
+    <div class="item" onclick="openModal(8)">
+        <img src="extra.jpeg">
+        <h3>Item Extra</h3>
+    </div>
 
-</body>
-</html>
+</div>
 
+
+
+<!-- =============== MODAL POPUP ================= -->
+<div class="modal" id="modal">
+    <div class="modal-content">
+
+        <span class="close-btn" onclick="closeModal()">×</span>
+        <span class="arrow left-arrow" onclick="prevImg()">❮</span>
+        <span class="arrow right-arrow" onclick="nextImg()">❯</span>
+
+        <img id="modal-img" src="">
+    </div>
+</div>
+
+
+<script>
+/* ===============================
+   LISTA DE IMAGENS ASSOCIADAS
+   =============================== */
+
+let images = [
+    ["georgia.jpeg", "fichageorgia.jpeg"],      // 0 → Georgia (2 imagens)
+    ["sofa.jpeg"],                             // 1
+    ["mesas.jpeg"],                            // 2
+    ["mesadecentro.jpeg"],                     // 3
+    ["blackplush.jpeg", "fichatechblackplush.jpeg"], // 4 → Black Plush (2 imagens)
+    ["cadeiras.jpeg"],                         // 5
+    ["cama.jpeg"],                             // 6
+    ["mesagrande.jpeg"],                       // 7
+    ["extra.jpeg"]                              // 8
+];
+
+let currentItem = 0;
+let currentImgIndex = 0;
+
+function openModal(index) {
+    currentItem = index;
+    currentImgIndex = 0;
+    document.getElementById("modal-img").src = images[index][0];
+    document.getElementById("modal").style.display = "flex";
+}
+
+function closeModal() {
+    document.getElementById("modal").style.display = "none";
+}
+
+/* ==== SETA DIREITA ==== */
+function nextImg() {
+    currentImgIndex++;
+    if (currentImgIndex >= images[currentItem].length) {
+        currentImgIndex = 0;
+    }
+    document.getElementById("modal-img").src = images[currentItem][currentImgIndex];
+}
+
+/* ==== SETA ESQUERDA ==== */
+function prevImg() {
+    currentImgIndex--;
+    if (currentImgIndex < 0) {
+        currentImgIndex = images[currentItem].length - 1;
+    }
+    document.getElementById("modal-img").src = images[currentItem][currentImgIndex];
+}
+</script>
