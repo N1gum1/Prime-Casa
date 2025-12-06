@@ -41,7 +41,6 @@
             background: rgba(0,0,0,0.35);
         }
 
-        /* TÍTULO CENTRAL */
         .header-title-center {
             position: absolute;
             top: 50%;
@@ -54,7 +53,6 @@
             text-align: center;
         }
 
-        /* ENDEREÇO NO CANTO ESQUERDO */
         .header-info {
             position: absolute;
             bottom: 15px;
@@ -65,28 +63,35 @@
         }
 
         /* ======================
-           QUADRADOS
+           GRID DOS PRODUTOS
         =======================*/
-        .grid-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+        .product {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
             gap: 8px;
             padding: 20px;
         }
 
-        .grid-item {
-            width: 180px;
-            height: 180px;
-            background-color: #333;
+        .item {
+            width: 100%;
+            background-color: white;
             border-radius: 8px;
-            overflow: hidden;
+            padding: 10px; /* borda branca ao redor da imagem */
+            box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+            text-align: center;
+            box-sizing: border-box;
         }
 
-        .grid-item img {
+        .item img {
             width: 100%;
-            height: 100%;
+            height: 250px;
             object-fit: cover;
+            border-radius: 6px;
+        }
+
+        .item h3 {
+            margin: 10px 0 0;
+            color: #000;
         }
 
     </style>
@@ -100,4 +105,30 @@
 
         <div class="overlay"></div>
 
-        <div class="header-titl
+        <div class="header-title-center">Quartos e Colchões</div>
+
+        <div class="header-info">
+            Shopping Casa Park Brasília • (61) 3233-1464
+        </div>
+    </header>
+
+    <!-- QUADRADOS (SEM AS FAIXADAS) -->
+    <section class="product">
+
+        <div class="item"><img src="georgia.jpeg"><h3>Georgia</h3></div>
+        <div class="item"><img src="sofa.jpeg"><h3>Sofá</h3></div>
+        <div class="item"><img src="mesas.jpeg"><h3>Mesas</h3></div>
+        <div class="item"><img src="mesadecentro.jpeg"><h3>Mesa de Centro</h3></div>
+        <div class="item"><img src="fichageorgia.jpeg"><h3>Ficha Georgia</h3></div>
+
+        <div class="item"><img src="blackpush.jpeg"><h3>Black Plush</h3></div>
+        <div class="item"><img src="cadeiras.jpeg"><h3>Cadeiras</h3></div>
+        <div class="item"><img src="fichatecblackplush.jpeg"><h3>Ficha Black Plush</h3></div>
+        <div class="item"><img src="cama.jpeg"><h3>Cama</h3></div>
+        <div class="item"><img src="mesaextra.jpeg"><h3>Mesa Extra</h3></div>
+
+    </section>
+
+</body>
+</html>
+
