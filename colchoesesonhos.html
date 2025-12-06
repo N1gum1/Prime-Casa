@@ -1,144 +1,140 @@
 <!DOCTYPE html>
-<html lang="PT-BR">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Colchões e Sonhos - Prime Casa</title>
-   
-    <style>
-        /* ================================
-           CONFIGURAÇÕES GERAIS DO SITE
-           ================================ */
-        body {
-            font-family: "Times New Roman", sans-serif;
-            background-color: #272727;
-            color: #c4c4c4;
-            margin: 0;
-            padding: 20px;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Colchões e Sonhos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f8f8;
+      margin: 0;
+      padding: 0;
+    }
 
-        header, footer {
-            text-align: center;
-            padding: 20px; 
-        }
+    /* Banner da loja */
+    .banner {
+      width: 100%;
+      height: 200px;
+      background-image: url('fachada-colchoes-e-sonhos.jpg'); /* imagem da fachada */
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 2em;
+      font-weight: bold;
+      text-shadow: 2px 2px 4px #000;
+    }
 
-        h1 {
-            text-align: center;
-            margin-bottom: 30px;
-        }
+    .tabs {
+      display: flex;
+      border-bottom: 2px solid #ccc;
+      margin: 20px;
+    }
 
-        /* ================================
-           ÁREA DOS QUADRADOS
-           ================================ */
-        .product {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr); /* 5 colunas iguais */
-            column-gap: 5px;  /* distância lateral */
-            row-gap: 25px;    /* distância vertical entre linhas */
-            justify-items: center;
-            padding: 10px;
-        }
+    .tab {
+      padding: 10px 20px;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+      border-radius: 5px 5px 0 0;
+      margin-right: 5px;
+    }
 
-        /* ================================
-           CAIXA DE CADA QUADRADO
-           ================================ */
-        .item {
-            width: 100%;
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-            text-align: center;
-            padding: 15px;
-            box-sizing: border-box;
-        }
+    .tab:hover {
+      background-color: #e0e0e0;
+    }
 
-        /* ================================
-           IMAGENS DOS QUADRADOS
-           ================================ */
-        .item img {
-            width: 100%;
-            height: 250px; /* Todas do mesmo tamanho */
-            object-fit: cover;
-            border-radius: 6px;
-        }
+    .tab.active {
+      background-color: #fff;
+      border: 2px solid #ccc;
+      border-bottom: none;
+      color: #333;
+      font-weight: bold;
+    }
 
-        /* ================================
-           LINK DO RODAPÉ
-           ================================ */
-        a {
-            display: inline-block;
-            margin-top: 20px;
-            color: #9b987a;
-            text-decoration: none;
-        }
+    .tab-content {
+      display: none;
+      background-color: #fff;
+      padding: 20px;
+      border: 2px solid #ccc;
+      border-radius: 0 5px 5px 5px;
+      margin: 0 20px 20px 20px;
+    }
 
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    .tab-content.active {
+      display: block;
+    }
 
+    /* Grade de colchões */
+    .colchoes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 15px;
+    }
+
+    .colchoes-grid .placeholder {
+      background-color: #ddd;
+      height: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #888;
+      font-size: 14px;
+      border-radius: 5px;
+      border: 2px dashed #ccc;
+    }
+  </style>
 </head>
 <body>
-    
-    <!-- TÍTULO DA PÁGINA -->
-    <header>
-        <h1>Colchões e Sonhos</h1>
-        <p>Shopping ID-Brasília • (61) 3328-1031</p>
-    </header>
 
-    <!-- ÁREA DOS PRODUTOS (10 QUADRADOS NO TOTAL) -->
-    <section class="product">
+  <div class="banner">Colchões e Sonhos</div>
 
-        <!-- LINHA 1 (5 itens) -->
-        <div class="item">
-            <img src="imagens/colchao01.jpg" alt="Colchão">
-            <h3>Colchão 1</h3>
-        </div>
-        <div class="item">
-            <img src="imagens/colchao02.jpg" alt="Colchão">
-            <h3>Colchão 2</h3>
-        </div>
-        <div class="item">
-            <img src="imagens/colchao03.jpg" alt="Colchão">
-            <h3>Colchão 3</h3>
-        </div>
-        <div class="item">
-            <img src="imagens/colchao04.jpg" alt="Colchão">
-            <h3>Colchão 4</h3>
-        </div>
-        <div class="item">
-            <img src="imagens/colchao05.jpg" alt="Colchão">
-            <h3>Colchão 5</h3>
-        </div>
+  <div class="tabs">
+    <div class="tab active" data-tab="colchao1">Colchão 1</div>
+    <div class="tab" data-tab="colchao2">Colchão 2</div>
+    <div class="tab" data-tab="colchao3">Colchão 3</div>
+  </div>
 
-        <!-- LINHA 2 (5 itens) -->
-        <div class="item">
-            <img src="imagens/colchao06.jpg" alt="Colchão">
-            <h3>Colchão 6</h3>
-        </div>
-        <div class="item">
-            <img src="imagens/colchao07.jpg" alt="Colchão">
-            <h3>Colchão 7</h3>
-        </div>
-        <div class="item">
-            <img src="imagens/colchao08.jpg" alt="Colchão">
-            <h3>Colchão 8</h3>
-        </div>
-        <div class="item">
-            <img src="imagens/colchao09.jpg" alt="Colchão">
-            <h3>Colchão 9</h3>
-        </div>
-        <div class="item">
-            <img src="imagens/colchao10.jpg" alt="Colchão">
-            <h3>Colchão 10</h3>
-        </div>
+  <div class="tab-content active" id="colchao1">
+    <div class="colchoes-grid">
+      <div class="placeholder">Foto do Colchão</div>
+      <div class="placeholder">Foto do Colchão</div>
+      <div class="placeholder">Foto do Colchão</div>
+    </div>
+  </div>
 
-    </section>
+  <div class="tab-content" id="colchao2">
+    <div class="colchoes-grid">
+      <div class="placeholder">Foto do Colchão</div>
+      <div class="placeholder">Foto do Colchão</div>
+      <div class="placeholder">Foto do Colchão</div>
+    </div>
+  </div>
 
-    <!-- RODAPÉ -->
-    <footer>
-        <a href="index.html">← Voltar para a página inicial</a>
-    </footer>
+  <div class="tab-content" id="colchao3">
+    <div class="colchoes-grid">
+      <div class="placeholder">Foto do Colchão</div>
+      <div class="placeholder">Foto do Colchão</div>
+      <div class="placeholder">Foto do Colchão</div>
+    </div>
+  </div>
+
+  <script>
+    const tabs = document.querySelectorAll('.tab');
+    const contents = document.querySelectorAll('.tab-content');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        contents.forEach(c => c.classList.remove('active'));
+
+        tab.classList.add('active');
+        document.getElementById(tab.dataset.tab).classList.add('active');
+      });
+    });
+  </script>
 
 </body>
 </html>
