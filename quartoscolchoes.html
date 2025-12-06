@@ -1,166 +1,122 @@
 <!DOCTYPE html>
-<html lang="PT-BR">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quartos e Colchões - Prime Casa</title>
 
     <style>
-        /* ======================
+        /* ==========================
            CONFIGURAÇÃO DO BODY
-        =======================*/
+        ========================== */
         body {
             font-family: "Times New Roman", sans-serif;
             background-color: #272727;
-            color: #c4c4c4;
+            color: #d4c4c4;
             margin: 0;
             padding: 0;
         }
 
-        header {
+        /* ==========================
+           BANNER DA FACHADA
+        ========================== */
+        .hero-header {
             position: relative;
             width: 100%;
+            height: 420px; /* altura do banner */
+            overflow: hidden;
         }
 
-        /* ======================
-           IMAGEM DA FACHADA
-        =======================*/
         .header-img {
             width: 100%;
-            height: 520px; /* altura do banner */
-            object-fit: cover; /* mantém a proporção sem distorcer */
+            height: 100%;
+            object-fit: cover;
             display: block;
         }
 
-        /* ======================
-           TEXTO EM CIMA DA IMAGEM
-        =======================*/
+        /* Película escurecida */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.35); /* leve escurecimento */
+        }
+
+        /* Texto no banner */
         .header-text {
             position: absolute;
-            bottom: 15px; /* distância da borda inferior */
-            left: 20px;   /* distância da borda esquerda */
-            background-color: rgba(0, 0, 0, 0.55); /* fundo transparente */
-            padding: 10px 14px;
-            border-radius: 6px;
-            color: #fff;
-            font-size: 18px;
-            line-height: 22px;
+            bottom: 20px;
+            left: 20px;
+            color: #ffffff;
+            font-size: 42px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
         }
 
-        h1 {
-            text-align: center;
-            margin-top: 15px;
-        }
-
-        /* ======================
-           GRID DOS PRODUTOS
-        =======================*/
-        .product {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 5px 12px; /* separação entre quadrados */
+        /* ==========================
+           GALERIA DE QUADRADOS
+        ========================== */
+        .grid-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px; /* espaçamento entre TODOS os quadrados */
             padding: 20px;
         }
 
-        .item {
-            width: 100%;
-            background-color: #ffffff;
+        .grid-item {
+            width: 180px;          /* largura igual para todos */
+            height: 180px;         /* altura igual para todos */
+            background-color: #333;
             border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-            text-align: center;
-            padding: 15px;
-            box-sizing: border-box;
+            overflow: hidden;
         }
 
-        .item img {
+        .grid-item img {
             width: 100%;
-            height: 250px;
-            object-fit: cover;
-            border-radius: 6px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-        }
-
-        footer a {
-            color: #9b987a;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
+            height: 100%;
+            object-fit: cover;     /* mantém proporção sem distorcer */
         }
     </style>
 </head>
 
 <body>
 
-    <!-- ===== IMAGEM DA FACHADA + TEXTO ===== -->
-    <header>
+    <!-- ==========================
+         BANNER DA FACHADA
+    ========================== -->
+    <header class="hero-header">
         <img src="quartos_e_colchoes_faixada.jpeg" class="header-img" alt="Fachada Prime Quartos e Colchões">
+
+        <div class="overlay"></div>
+
         <div class="header-text">
-            Shopping CasaPark Brasília • (61) 3233-1464
+            Quartos e Colchões
         </div>
     </header>
 
-    <h1>Quartos e Colchões</h1>
+    <!-- ==========================
+         GALERIA DE QUADRADOS
+         (5 em cima + 5 embaixo)
+    ========================== -->
+    <section class="grid-container">
 
-    <!-- ===== GRID DOS 10 PRODUTOS ===== -->
-    <section class="product">
+        <!-- 10 quadrados -->
+        <div class="grid-item"><img src="georgia.jpeg"></div>
+        <div class="grid-item"><img src="sofa.jpeg"></div>
+        <div class="grid-item"><img src="mesas.jpeg"></div>
+        <div class="grid-item"><img src="mesadecentro.jpeg"></div>
+        <div class="grid-item"><img src="fichageorgia.jpeg"></div>
 
-        <div class="item">
-            <img src="https://www.ortobom.com.br/cdn/shop/files/colchao-airtech-spring-ortobom-vista-frontal.png" alt="Colchão">
-            <h3>AirTech Spring</h3>
-        </div>
-
-        <div class="item">
-            <img src="https://a-static.mlcdn.com.br/450x450/colchao-queen-size-ortobom-molas-pocket-physiopillow-158x198x32-cm-ortobom/ortobom/21311053/46ff17cb8dd7c7ab9cb7ffa8ea93087b.jpeg" alt="Colchão">
-            <h3>Physio Pillow</h3>
-        </div>
-
-        <div class="item">
-            <img src="https://images.ortobom.com.br/unsafe/600x600/filters:quality(100)/https://ortobom.vtexassets.com/arquivos/ids/314982/colchao-molas-pocket-spring-resort.jpg" alt="Colchão">
-            <h3>Resort Pocket</h3>
-        </div>
-
-        <div class="item">
-            <img src="https://images.kalunggdl.com.br/unsafe/700x700/https://img.kalunggdl.com.br/produtos/7896388501496/7896388501496_01.jpg" alt="Colchão">
-            <h3>Exclusive Bamboo</h3>
-        </div>
-
-        <div class="item">
-            <img src="https://www.ortobom.com.br/cdn/shop/files/ortobom-spring-gray.jpg" alt="Colchão">
-            <h3>Spring Gray</h3>
-        </div>
-
-        <div class="item">
-            <img src="https://www.ortobom.com.br/cdn/shop/files/colchao-excellence-molas-nano.jpg" alt="Colchão">
-            <h3>Excellence Nano</h3>
-        </div>
-
-        <div class="item">
-            <img src="https://acdn.mitiendanube.com/stores/001/076/622/products/colchao-casal-molas-nano.jpg" alt="Colchão">
-            <h3>Nano Molas</h3>
-        </div>
-
-        <div class="item">
-            <img src="https://acdn.mitiendanube.com/stores/003/315/076/products/colchao-viscoelastic.jpg" alt="Colchão">
-            <h3>ViscoElastic</h3>
-        </div>
-
-        <div class="item">
-            <img src="https://www.ortobom.com.br/cdn/shop/files/colchao-espuma-liberty.jpg" alt="Colchão">
-            <h3>Liberty Foam</h3>
-        </div>
-
-        <div class="item">
-            <img src="https://www.ortobom.com.br/cdn/shop/files/colchao-ortopedico-premium.jpg" alt="Colchão">
-            <h3>Ortopédico Premium</h3>
-        </div>
+        <div class="grid-item"><img src="blackpush.jpeg"></div>
+        <div class="grid-item"><img src="cadeiras.jpeg"></div>
+        <div class="grid-item"><img src="fichatecblackplush.jpeg"></div>
+        <div class="grid-item"><img src="cama.jpeg"></div>
+        <div class="grid-item"><img src="colchoes_e_sonhos_faixada.jpeg"></div>
 
     </section>
 
-    <!-- ===== RODAPÉ ===== -->
-    <footer>
+</body>
+</html>
