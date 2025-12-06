@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html lang="PT-BR">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Quartos e Colchões - Prime Casa</title>
-   
+    <title>Colchões e Sonhos</title>
     <style>
         body {
             font-family: "Times New Roman", sans-serif;
@@ -20,7 +19,7 @@
             position: relative;
             width: 100%;
             height: 420px;
-            background-image: url("quartos_e_colchoes_faixada.jpeg");
+            background-image: url("fachada-colchoes-e-sonhos.jpeg");
             background-size: cover;
             background-position: center;
         }
@@ -55,8 +54,7 @@
         }
 
         /* =======================
-           GALERIA — VISUAL COPIADO
-           DO SITE PRINCIPAL
+           GALERIA 3 POR LINHA
         ======================= */
         .product-grid {
             display: grid;
@@ -68,7 +66,7 @@
         }
 
         .item {
-            background-color: #cfcece; /* mesma cor do outro site */
+            background-color: #cfcece; 
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 2px 8px rgba(0,0,0,0.4);
@@ -77,176 +75,10 @@
         }
 
         .item:hover {
-            transform: translateY(-5px); /* leve pulinho */
+            transform: translateY(-5px); 
         }
 
         .item img {
             width: 100%;
             height: 260px;
             object-fit: cover;
-        }
-
-        .item h3 {
-            padding: 15px;
-            font-size: 1.2em;
-            color: #333;
-            text-align: center;
-        }
-
-        /* =======================
-           POPUP / MODAL
-        ======================= */
-        .modal-bg {
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,0.85);
-            backdrop-filter: blur(6px);
-            display: none;
-            justify-content: center;
-            align-items: center;
-            z-index: 10;
-        }
-
-        .modal-content {
-            position: relative;
-            background: white;
-            padding: 10px;
-            border-radius: 10px;
-            max-width: 90%;
-            max-height: 90%;
-        }
-
-        .modal-content img {
-            max-width: 100%;
-            max-height: 80vh;
-            display: block;
-            border-radius: 10px;
-        }
-
-        .arrow {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 38px;
-            font-weight: bold;
-            color: white;
-            cursor: pointer;
-            user-select: none;
-        }
-
-        .arrow-left { left: -55px; }
-        .arrow-right { right: -55px; }
-
-        .close-btn {
-            position: absolute;
-            top: -40px;
-            right: 0;
-            font-size: 32px;
-            color: white;
-            cursor: pointer;
-        }
-
-    </style>
-
-</head>
-
-<body>
-
-    <!-- =======================
-         BANNER DA FACHADA
-    ======================= -->
-    <div class="banner">
-        <div class="banner-title">Quartos e Colchões</div>
-
-        <div class="banner-info">
-            Shopping CasaPark Brasília<br>
-            (61) 3233-1464
-        </div>
-    </div>
-
-    <!-- =======================
-         GALERIA 3 POR LINHA
-    ======================= -->
-    <div class="product-grid">
-
-        <!-- Georgia -->
-        <div class="item" onclick="openModal(0)">
-            <img src="georgia.jpeg">
-            <h3>Georgia</h3>
-        </div>
-
-        <!-- Black Plush -->
-        <div class="item" onclick="openModal(2)">
-            <img src="blackpush.jpeg">
-            <h3>Black Plush</h3>
-        </div>
-
-        <!-- Exemplo de outros modelos -->
-        <div class="item">
-            <img src="https://via.placeholder.com/400x260">
-            <h3>Modelo</h3>
-        </div>
-
-        <div class="item">
-            <img src="https://via.placeholder.com/400x260">
-            <h3>Modelo</h3>
-        </div>
-
-        <div class="item">
-            <img src="https://via.placeholder.com/400x260">
-            <h3>Modelo</h3>
-        </div>
-
-        <div class="item">
-            <img src="https://via.placeholder.com/400x260">
-            <h3>Modelo</h3>
-        </div>
-
-    </div>
-
-    <!-- =======================
-         POPUP
-    ======================= -->
-    <div id="modal" class="modal-bg">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal()">✖</span>
-            <span class="arrow arrow-left" onclick="prev()">❮</span>
-            <img id="modal-img">
-            <span class="arrow arrow-right" onclick="next()">❯</span>
-        </div>
-    </div>
-
-    <script>
-        const images = [
-            "georgia.jpeg",
-            "fichageorgia.jpeg",
-            "blackpush.jpeg",
-            "fichatecblackplush.jpeg"
-        ];
-
-        let index = 0;
-
-        function openModal(i) {
-            index = i;
-            document.getElementById("modal-img").src = images[index];
-            document.getElementById("modal").style.display = "flex";
-        }
-
-        function closeModal() {
-            document.getElementById("modal").style.display = "none";
-        }
-
-        function next() {
-            index = (index + 1) % images.length;
-            document.getElementById("modal-img").src = images[index];
-        }
-
-        function prev() {
-            index = (index - 1 + images.length) % images.length;
-            document.getElementById("modal-img").src = images[index];
-        }
-    </script>
-
-</body>
-</html>
-
