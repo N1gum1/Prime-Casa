@@ -1,213 +1,252 @@
-<style>
-/* ===== GALERIA 3 POR LINHA ===== */
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
-    padding: 30px;
-    justify-items: center;
-}
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quartos e Colchões - Prime Casa</title>
+   
+    <style>
+        body {
+            font-family: "Times New Roman", sans-serif;
+            background-color: #272727;
+            color: #c4c4c4;
+            margin: 0;
+        }
 
-/* ===== QUADRADOS ===== */
-.item {
-    width: 260px;
-    background: white;
-    border-radius: 12px;
-    padding: 12px;
-    cursor: pointer;
-    transition: .2s;
-    text-align: center;
-}
+        /* =======================
+           BANNER DA FACHADA
+        ======================= */
+        .banner {
+            position: relative;
+            width: 100%;
+            height: 420px;
+            background-image: url("quartos_e_colchoes_faixada.jpeg");
+            background-size: cover;
+            background-position: center;
+        }
 
-.item:hover {
-    transform: scale(1.03);
-}
+        /* película escura */
+        .banner::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.35); /* meio escuro */
+        }
 
-.item img {
-    width: 100%;
-    height: 240px;
-    object-fit: cover;
-    border-radius: 10px;
-}
+        /* texto central */
+        .banner-title {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 38px;
+            font-weight: bold;
+            z-index: 2;
+            text-shadow: 0px 0px 10px black;
+        }
 
-.item h3 {
-    margin-top: 10px;
-    color: black;
-}
+        /* endereço no canto inferior esquerdo */
+        .banner-info {
+            position: absolute;
+            bottom: 15px;
+            left: 20px;
+            color: #eaeaea;
+            font-size: 18px;
+            z-index: 2;
+            text-shadow: 0px 0px 6px black;
+        }
 
-/* ===== MODAL POP-UP ===== */
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,.7);
-    backdrop-filter: blur(4px);
-    justify-content: center;
-    align-items: center;
-    z-index: 99999;
-}
+        /* =======================
+           GALERIA 3 POR LINHA
+        ======================= */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            padding: 25px;
+            max-width: 1050px;
+            margin: auto;
+        }
 
-.modal-content {
-    position: relative;
-    max-width: 70%;
-}
+        .item {
+            background: white;
+            border-radius: 10px;
+            padding: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+            cursor: pointer;
+        }
 
-.modal img {
-    width: 100%;
-    max-height: 80vh;
-    object-fit: contain;
-    border-radius: 10px;
-}
+        .item img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
 
-/* ===== FECHAR ===== */
-.close-btn {
-    position: absolute;
-    top: -35px;
-    right: 0;
-    font-size: 34px;
-    cursor: pointer;
-    color: white;
-}
+        .item h3 {
+            color: black;
+            margin-top: 10px;
+        }
 
-/* ===== SETAS ===== */
-.arrow {
-    position: absolute;
-    top: 50%;
-    font-size: 45px;
-    color: white;
-    cursor: pointer;
-    transform: translateY(-50%);
-    user-select: none;
-}
+        /* =======================
+           POPUP / MODAL
+        ======================= */
 
-.left-arrow { left: -60px; }
-.right-arrow { right: -60px; }
-</style>
+        .modal-bg {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.85);
+            backdrop-filter: blur(6px);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+        }
 
+        .modal-content {
+            position: relative;
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+            max-width: 90%;
+            max-height: 90%;
+        }
 
-<!-- =============== GALERIA ================= -->
-<div class="gallery">
+        .modal-content img {
+            max-width: 100%;
+            max-height: 80vh;
+            display: block;
+            border-radius: 10px;
+        }
 
-    <!-- GEORGIA (tem popup com 2 imagens) -->
-    <div class="item" onclick="openModal(0)">
-        <img src="georgia.jpeg">
-        <h3>Georgia</h3>
+        /* botões da seta */
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 38px;
+            font-weight: bold;
+            color: white;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .arrow-left { left: -55px; }
+        .arrow-right { right: -55px; }
+
+        /* fechar */
+        .close-btn {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            font-size: 32px;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- =======================
+         BANNER DA FACHADA
+    ======================= -->
+    <div class="banner">
+        <div class="banner-title">Quartos e Colchões</div>
+
+        <div class="banner-info">
+            Shopping CasaPark Brasília<br>
+            (61) 3233-1464
+        </div>
     </div>
 
-    <!-- SOFÁ -->
-    <div class="item" onclick="openModal(1)">
-        <img src="sofa.jpeg">
-        <h3>Sofá</h3>
+    <!-- =======================
+         GALERIA 3 POR LINHA
+    ======================= -->
+    <div class="product-grid">
+
+        <!-- Georgia -->
+        <div class="item" onclick="openModal(0)">
+            <img src="georgia.jpeg">
+            <h3>Georgia</h3>
+        </div>
+
+        <!-- Black Plush -->
+        <div class="item" onclick="openModal(2)">
+            <img src="blackplush.jpeg">
+            <h3>Black Plush</h3>
+        </div>
+
+        <!-- qualquer outra foto -->
+        <div class="item">
+            <img src="https://via.placeholder.com/400x260">
+            <h3>Outro Modelo</h3>
+        </div>
+
+        <!-- mais itens... -->
+        <div class="item">
+            <img src="https://via.placeholder.com/400x260">
+            <h3>Modelo</h3>
+        </div>
+
+        <div class="item">
+            <img src="https://via.placeholder.com/400x260">
+            <h3>Modelo</h3>
+        </div>
+
+        <div class="item">
+            <img src="https://via.placeholder.com/400x260">
+            <h3>Modelo</h3>
+        </div>
+
     </div>
 
-    <!-- MESAS -->
-    <div class="item" onclick="openModal(2)">
-        <img src="mesas.jpeg">
-        <h3>Mesas</h3>
+    <!-- =======================
+         POPUP
+    ======================= -->
+    <div id="modal" class="modal-bg">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">✖</span>
+            <span class="arrow arrow-left" onclick="prev()">❮</span>
+            <img id="modal-img">
+            <span class="arrow arrow-right" onclick="next()">❯</span>
+        </div>
     </div>
 
-    <!-- MESA DE CENTRO -->
-    <div class="item" onclick="openModal(3)">
-        <img src="mesadecentro.jpeg">
-        <h3>Mesa de Centro</h3>
-    </div>
+    <script>
+        /* imagens para navegar */
+        const images = [
+            "georgia.jpeg",
+            "fichageorgia.jpeg",
 
-    <!-- BLACK PLUSH (tem popup com 2 imagens) -->
-    <div class="item" onclick="openModal(4)">
-        <img src="blackplush.jpeg">
-        <h3>Black Plush</h3>
-    </div>
+            "blackplush.jpeg",
+            "fichatechblackplush.jpeg"
+        ];
 
-    <!-- CADEIRAS -->
-    <div class="item" onclick="openModal(5)">
-        <img src="cadeiras.jpeg">
-        <h3>Cadeiras</h3>
-    </div>
+        let index = 0;
 
-    <!-- CAMA -->
-    <div class="item" onclick="openModal(6)">
-        <img src="cama.jpeg">
-        <h3>Cama</h3>
-    </div>
+        function openModal(i) {
+            index = i;
+            document.getElementById("modal-img").src = images[index];
+            document.getElementById("modal").style.display = "flex";
+        }
 
-    <!-- MESA GRANDE -->
-    <div class="item" onclick="openModal(7)">
-        <img src="mesagrande.jpeg">
-        <h3>Mesa Grande</h3>
-    </div>
+        function closeModal() {
+            document.getElementById("modal").style.display = "none";
+        }
 
-    <!-- ITEM EXTRA (sobra 1 sozinho na última linha) -->
-    <div class="item" onclick="openModal(8)">
-        <img src="extra.jpeg">
-        <h3>Item Extra</h3>
-    </div>
+        function next() {
+            index = (index + 1) % images.length;
+            document.getElementById("modal-img").src = images[index];
+        }
 
-</div>
+        function prev() {
+            index = (index - 1 + images.length) % images.length;
+            document.getElementById("modal-img").src = images[index];
+        }
+    </script>
 
-
-
-<!-- =============== MODAL POPUP ================= -->
-<div class="modal" id="modal">
-    <div class="modal-content">
-
-        <span class="close-btn" onclick="closeModal()">×</span>
-        <span class="arrow left-arrow" onclick="prevImg()">❮</span>
-        <span class="arrow right-arrow" onclick="nextImg()">❯</span>
-
-        <img id="modal-img" src="">
-    </div>
-</div>
-
-
-<script>
-/* ===============================
-   LISTA DE IMAGENS ASSOCIADAS
-   =============================== */
-
-let images = [
-    ["georgia.jpeg", "fichageorgia.jpeg"],      // 0 → Georgia (2 imagens)
-    ["sofa.jpeg"],                             // 1
-    ["mesas.jpeg"],                            // 2
-    ["mesadecentro.jpeg"],                     // 3
-    ["blackplush.jpeg", "fichatechblackplush.jpeg"], // 4 → Black Plush (2 imagens)
-    ["cadeiras.jpeg"],                         // 5
-    ["cama.jpeg"],                             // 6
-    ["mesagrande.jpeg"],                       // 7
-    ["extra.jpeg"]                              // 8
-];
-
-let currentItem = 0;
-let currentImgIndex = 0;
-
-function openModal(index) {
-    currentItem = index;
-    currentImgIndex = 0;
-    document.getElementById("modal-img").src = images[index][0];
-    document.getElementById("modal").style.display = "flex";
-}
-
-function closeModal() {
-    document.getElementById("modal").style.display = "none";
-}
-
-/* ==== SETA DIREITA ==== */
-function nextImg() {
-    currentImgIndex++;
-    if (currentImgIndex >= images[currentItem].length) {
-        currentImgIndex = 0;
-    }
-    document.getElementById("modal-img").src = images[currentItem][currentImgIndex];
-}
-
-/* ==== SETA ESQUERDA ==== */
-function prevImg() {
-    currentImgIndex--;
-    if (currentImgIndex < 0) {
-        currentImgIndex = images[currentItem].length - 1;
-    }
-    document.getElementById("modal-img").src = images[currentItem][currentImgIndex];
-}
-</script>
+</body>
+</html>
