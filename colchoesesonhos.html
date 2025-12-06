@@ -5,13 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Colchões e Sonhos</title>
     <style>
-        body {
+        html, body {
             margin: 0;
-            height: 100vh;
+            padding: 0;
+            height: 100%;
+        }
+
+        body {
             background-image: url("image.jpeg");
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
+            background-size: cover;         /* ajusta para cobrir toda a tela */
+            background-position: center;    /* centraliza a imagem */
+            background-repeat: no-repeat;   /* evita repetição */
+            background-attachment: fixed;   /* mantém fixa ao rolar */
         }
     </style>
 </head>
