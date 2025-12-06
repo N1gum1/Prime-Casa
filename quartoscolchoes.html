@@ -25,7 +25,6 @@
             background-position: center;
         }
 
-        /* película escura */
         .banner::after {
             content: "";
             position: absolute;
@@ -33,20 +32,18 @@
             background: rgba(0,0,0,0.35);
         }
 
-        /* texto central */
         .banner-title {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             color: white;
-            font-size: 38px;
+            font-size: 40px;
             font-weight: bold;
             z-index: 2;
             text-shadow: 0px 0px 10px black;
         }
 
-        /* endereço no canto inferior esquerdo */
         .banner-info {
             position: absolute;
             bottom: 15px;
@@ -58,51 +55,47 @@
         }
 
         /* =======================
-           GALERIA 3 POR LINHA
+           GALERIA — VISUAL COPIADO
+           DO SITE PRINCIPAL
         ======================= */
         .product-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
-            padding: 25px;
-            max-width: 1050px;
-            margin: auto;
+            gap: 30px;
+            padding: 30px;
+            max-width: 1100px;
+            margin: 40px auto;
         }
 
-        /* QUADRADO COM CINZA CLARO + ANIMAÇÃO */
         .item {
-            background: #e9e9e9; /* 🔥 cinza claro solicitado */
-            border-radius: 10px;
-            padding: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+            background-color: #cfcece; /* mesma cor do outro site */
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+            transition: transform 0.5s;
             cursor: pointer;
-
-            /* animação suave */
-            transition: transform 0.25s ease, box-shadow 0.25s ease;
         }
 
-        /* animação ao passar o mouse */
         .item:hover {
-            transform: translateY(-6px); /* 🔥 sobe levemente */
-            box-shadow: 0 6px 15px rgba(0,0,0,0.45); /* sombra mais forte */
+            transform: translateY(-5px); /* leve pulinho */
         }
 
         .item img {
             width: 100%;
             height: 260px;
             object-fit: cover;
-            border-radius: 8px;
         }
 
         .item h3 {
-            color: black;
-            margin-top: 10px;
+            padding: 15px;
+            font-size: 1.2em;
+            color: #333;
+            text-align: center;
         }
 
         /* =======================
            POPUP / MODAL
         ======================= */
-
         .modal-bg {
             position: fixed;
             inset: 0;
@@ -130,7 +123,6 @@
             border-radius: 10px;
         }
 
-        /* botões da seta */
         .arrow {
             position: absolute;
             top: 50%;
@@ -145,7 +137,6 @@
         .arrow-left { left: -55px; }
         .arrow-right { right: -55px; }
 
-        /* fechar */
         .close-btn {
             position: absolute;
             top: -40px;
@@ -154,6 +145,7 @@
             color: white;
             cursor: pointer;
         }
+
     </style>
 
 </head>
@@ -189,10 +181,10 @@
             <h3>Black Plush</h3>
         </div>
 
-        <!-- modelos fictícios -->
+        <!-- Exemplo de outros modelos -->
         <div class="item">
             <img src="https://via.placeholder.com/400x260">
-            <h3>Outro Modelo</h3>
+            <h3>Modelo</h3>
         </div>
 
         <div class="item">
@@ -257,3 +249,4 @@
 
 </body>
 </html>
+
