@@ -39,6 +39,7 @@
     .header-left {
       font-size: 2em;
       font-weight: bold;
+      font-family: 'Times New Roman', Times, serif;
     }
 
     .header-center {
@@ -72,11 +73,10 @@
       background-color: #f0f0f0;
     }
 
-    /* HERO */
     .hero {
       background-size: cover;
       background-position: center;
-      height: 450px;
+      height: 500px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -100,6 +100,7 @@
       position: relative;
       font-size: 3em;
       z-index: 1;
+      font-family: 'Times New Roman', Times, serif;
     }
 
     .hero-address {
@@ -109,6 +110,7 @@
       z-index: 2;
       color: white;
       font-size: 1em;
+      font-family: 'Times New Roman', Times, serif;
       text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
     }
 
@@ -163,4 +165,532 @@
       transform: translateX(100px);
     }
 
-    .product.show
+    .product.show {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    footer {
+      background-color: #1c1c1c;
+      color: #aaa;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+    }
+
+    .whatsapp-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+
+    .whatsapp-button img {
+      width: 60px;
+      height: 60px;
+      transition: transform 0.3s ease;
+    }
+
+    .whatsapp-button img:hover {
+      transform: scale(1.1);
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .header-center {
+        justify-content: center;
+        margin: 10px 0;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .header-right {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-left">Prime Casa</div>
+  <div class="header-center">
+    <nav>
+      <ul>
+        <li><a href="#cadeiras">Cadeiras</a></li>
+        <li><a href="#mesas">Mesas</a></li>
+        <li><a href="#sofas">Sofás</a></li>
+        <li><a href="#decoracao">Área Externa / Camas</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="header-right">
+    Shopping CasaPark Brasília<br>(61) 3233-1464
+  </div>
+</header>
+
+<section class="hero" style="background-image: url('https://casapark.com.br/wp-content/uploads/2021/11/primecasa-bannermobile-1.jpg');">
+  <h1>Prime Casa</h1>
+</section>
+
+<section class="section" id="cadeiras">
+  <h2>Cadeiras</h2>
+  <div class="products">
+
+    <a href="cadeiras.html">
+      <div class="product">
+        <img src="https://i.pinimg.com/originals/16/d4/f4/16d4f49643208bab935306ace88bce3c.jpg" alt="Cadeira 1">
+        <h3>Cadeira Elegante</h3>
+      </div>
+    </a>
+
+    <a href="cadeiras.html">
+      <div class="product">
+        <img src="https://i.pinimg.com/originals/c7/20/26/c720262e328abb457d74d43898a5afbd.jpg" alt="Cadeira 2">
+        <h3>Cadeira Moderna</h3>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<section class="section" id="mesas">
+  <h2>Mesas</h2>
+  <div class="products">
+
+    <a href="mesas.html">
+      <div class="product">
+        <img src="https://www.totalconstrucao.com.br/wp-content/uploads/2018/02/sala-de-jantar-moderna-57.jpg" alt="Mesa 1">
+        <h3>Mesa de Jantar</h3>
+      </div>
+    </a>
+
+    <a href="mesadecentro.html">
+      <div class="product">
+        <img src="https://bergendecor.cdn.magazord.com.br/img/2024/09/produto/5497/conjunto-mesa-de-centro-organica-cloud-em-madeira-1467-1-dff137b7eeb07b4c5cc350bb9e9c1c40.jpeg?ims=fit-in/600x600/filters:fill(white)" alt="Mesa 2">
+        <h3>Mesa de Centro</h3>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<section class="section" id="sofas">
+  <h2>Sofás</h2>
+  <div class="products">
+
+    <a href="sofa.html">
+      <div class="product">
+        <img src="https://www.laform.com.br/_next/image?url=https%3A%2F%2Fportal.laform.com.br%2Fgaleria%2F46%2FPVPRO%2F469289261005447.jpg&w=1080&q=75&dpl=dpl_FkXkphhcv4cThRd8pVxqwp18kwnK" alt="Sofá 1">
+        <h3>Sofá Retrátil</h3>
+      </div>
+    </a>
+
+    <a href="sofa.html">
+      <div class="product">
+        <img src="https://acdn-us.mitiendanube.com/stores/004/555/780/products/blend-01123-00012-360c57ec85b26e5f5317418826494064-640-0.webp" alt="Sofá 2">
+        <h3>Sofá Fixo</h3>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<section class="section" id="decoracao">
+  <h2>Área Externa e Camas</h2>
+  <div class="products">
+
+    <a href="areaexterna.html">
+      <div class="product">
+        <img src="https://images.tcdn.com.br/img/img_prod/718490/conjunto_paris_em_corda_nautica_reta_1_sofa_3l_2_poltronas_1_mesa_com_champanheira_3311_1_80c7c9d6452b4828499a1ec07c4609f4.jpg" alt="Área Externa">
+        <h3>Área Externa</h3>
+      </div>
+    </a>
+
+    <a href="cama.html">
+      <div class="product">
+        <img src="https://casalecchi.com.br/wp-content/uploads/2023/06/ALPHA-II-01.jpg" alt="Cama">
+        <h3>Camas</h3>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<a href="quartoscolchoes.html" target="_blank" style="display:block;">
+  <section class="hero" style="background-image: url('https://lh3.googleusercontent.com/p/AF1QipNmeYq7FIxSwSTRVWlInnfcHAtbzl4PXEcujtml=s680-w680-h510-rw');">
+    <h1>Prime Quartos e Colchões</h1>
+    <div class="hero-address">Shopping CasaPark Brasília-DF<br>(61) 3233-1464</div>
+  </section>
+</a>
+
+<a href="colchoesesonhos.html" target="_blank" style="display:block;">
+<section class="hero" style="background-image: url('https://lh3.googleusercontent.com/gps-cs-s/AG0ilSyJDKEXvnS-XH43ekA3uMJqbEn6eTnRpNzib7DbP_lbHXCX9P5zkwL3mPfDesNv610t_CvTEo23RBkkLPbmf-rpgm89wllD85j-PGbu8L1BdyOsnHimIiprsqCSH47JfCdRX-eI=s680-w680-h510-rw');">
+    <h1>Prime Colchões e Sonhos</h1>
+    <div class="hero-address">Shopping ID-Brasília-DF<br>(61) 3328-1031</div>
+  </section>
+</a>
+
+<footer id="contato">
+  <p>© 2025 Prime Casa. Todos os direitos reservados.</p>
+  <p>Contato: (61) 3233-1464 | shopping CasaPark Brasília</p>
+</footer>
+
+<div class="whatsapp-button">
+  <a href="https://wa.me/5561995896569" target="_blank" aria-label="Fale conosco no WhatsApp">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Botão do WhatsApp">
+  </a>
+</div>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    }
+  });
+}, { threshold: 0.2 });
+
+const products = document.querySelectorAll('.product');
+products.forEach((product, index) => {
+  product.classList.add(index % 2 === 0 ? 'from-left' : 'from-right');
+  observer.observe(product);
+});
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
