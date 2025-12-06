@@ -30,7 +30,7 @@
             content: "";
             position: absolute;
             inset: 0;
-            background: rgba(0,0,0,0.35); /* meio escuro */
+            background: rgba(0,0,0,0.35);
         }
 
         /* texto central */
@@ -69,12 +69,22 @@
             margin: auto;
         }
 
+        /* QUADRADO COM CINZA CLARO + ANIMAÇÃO */
         .item {
-            background: white;
+            background: #e9e9e9; /* 🔥 cinza claro solicitado */
             border-radius: 10px;
             padding: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.25);
             cursor: pointer;
+
+            /* animação suave */
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        /* animação ao passar o mouse */
+        .item:hover {
+            transform: translateY(-6px); /* 🔥 sobe levemente */
+            box-shadow: 0 6px 15px rgba(0,0,0,0.45); /* sombra mais forte */
         }
 
         .item img {
@@ -179,13 +189,12 @@
             <h3>Black Plush</h3>
         </div>
 
-        <!-- qualquer outra foto -->
+        <!-- modelos fictícios -->
         <div class="item">
             <img src="https://via.placeholder.com/400x260">
             <h3>Outro Modelo</h3>
         </div>
 
-        <!-- mais itens... -->
         <div class="item">
             <img src="https://via.placeholder.com/400x260">
             <h3>Modelo</h3>
@@ -216,11 +225,9 @@
     </div>
 
     <script>
-        /* imagens para navegar */
         const images = [
             "georgia.jpeg",
             "fichageorgia.jpeg",
-
             "blackpush.jpeg",
             "fichatecblackplush.jpeg"
         ];
