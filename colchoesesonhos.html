@@ -1,25 +1,185 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Colchões e Sonhos</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Colchões e Sonhos - Prime Casa</title>
+
     <style>
-        html, body {
+        body {
+            font-family: "Times New Roman", sans-serif;
+            background-color: #272727;
+            color: #c4c4c4;
             margin: 0;
-            padding: 0;
-            height: 100%;
         }
 
-        body {
-            background-image: url("image.jpeg");
-            background-size: cover;         /* ajusta para cobrir toda a tela */
-            background-position: center;    /* centraliza a imagem */
-            background-repeat: no-repeat;   /* evita repetição */
-            background-attachment: fixed;   /* mantém fixa ao rolar */
+        /* =======================
+           BANNER
+        ======================= */
+        .banner {
+            position: relative;
+            width: 100%;
+            height: 420px;
+            background-image: url("colchoes_e_sonhos_faixada.jpeg"); /* se não tiver, pode trocar por link */
+            background-size: cover;
+            background-position: center;
+        }
+
+        .banner::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.35);
+        }
+
+        .banner-title {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 38px;
+            font-weight: bold;
+            z-index: 2;
+            text-shadow: 0 0 10px black;
+        }
+
+        .banner-info {
+            position: absolute;
+            bottom: 15px;
+            left: 20px;
+            color: #eaeaea;
+            font-size: 18px;
+            z-index: 2;
+            text-shadow: 0 0 6px black;
+        }
+
+        /* =======================
+           GRID DOS PRODUTOS
+        ======================= */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            padding: 30px;
+            max-width: 1050px;
+            margin: auto;
+        }
+
+        .item {
+            background-color: #cfcece; /* identidade visual */
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+            transition: transform 0.5s;
+            cursor: pointer;
+        }
+
+        .item:hover {
+            transform: translateY(-5px);
+        }
+
+        .item img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+        }
+
+        .item h3 {
+            color: #1c1c1c;
+            font-size: 1.2em;
+            padding: 12px;
+            text-align: center;
+        }
+
+        /* =======================
+           RODAPÉ
+        ======================= */
+        footer {
+            text-align: center;
+            padding: 25px;
+        }
+
+        footer a {
+            color: #9b987a;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* =======================
+           RESPONSIVO
+        ======================= */
+        @media (max-width: 900px) {
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .banner-title {
+                font-size: 28px;
+            }
         }
     </style>
 </head>
+
 <body>
+
+    <!-- BANNER -->
+    <div class="banner">
+        <div class="banner-title">Colchões e Sonhos</div>
+        <div class="banner-info">
+            Shopping ID Brasília<br>
+            (61) 3328-1031
+        </div>
+    </div>
+
+    <!-- GRID DE COLCHÕES -->
+    <section class="product-grid">
+
+        <div class="item">
+            <img src="https://via.placeholder.com/400x260">
+            <h3>Modelo Premium</h3>
+        </div>
+
+        <div class="item">
+            <img src="https://via.placeholder.com/400x260">
+            <h3>Modelo Confort</h3>
+        </div>
+
+        <div class="item">
+            <img src="https://via.placeholder.com/400x260">
+            <h3>Modelo Luxo</h3>
+        </div>
+
+        <div class="item">
+            <img src="https://via.placeholder.com/400x260">
+            <h3>Modelo Classic</h3>
+        </div>
+
+        <div class="item">
+            <img src="https://via.placeholder.com/400x260">
+            <h3>Modelo Soft</h3>
+        </div>
+
+        <div class="item">
+            <img src="https://via.placeholder.com/400x260">
+            <h3>Modelo Dream</h3>
+        </div>
+
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <a href="index.html">← Voltar para a página inicial</a>
+    </footer>
+
 </body>
 </html>
