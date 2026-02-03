@@ -13,9 +13,6 @@
             margin: 0;
         }
 
-        /* =======================
-           BANNER DA FACHADA
-        ======================= */
         .banner {
             position: relative;
             width: 100%;
@@ -54,9 +51,6 @@
             text-shadow: 0px 0px 6px black;
         }
 
-        /* =======================
-           GALERIA
-        ======================= */
         .product-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -92,9 +86,6 @@
             text-align: center;
         }
 
-        /* =======================
-           MODAL
-        ======================= */
         .modal-bg {
             position: fixed;
             inset: 0;
@@ -149,103 +140,107 @@
 
 <body>
 
-    <!-- BANNER -->
-    <div class="banner">
-        <div class="banner-title">Quartos e Colchões</div>
-        <div class="banner-info">
-            Shopping CasaPark Brasília<br>
-            (61) 3233-1464
-        </div>
+<div class="banner">
+    <div class="banner-title">Quartos e Colchões</div>
+    <div class="banner-info">
+        Shopping CasaPark Brasília<br>
+        (61) 3233-1464
+    </div>
+</div>
+
+<div class="product-grid">
+
+    <div class="item" onclick="openModal(0)">
+        <img src="img/georgia.jpeg">
+        <h3>Georgia</h3>
     </div>
 
-    <!-- GALERIA -->
-    <div class="product-grid">
-
-        <div class="item" onclick="openModal(0)">
-            <img src="img/georgia.jpeg">
-            <h3>Georgia</h3>
-        </div>
-
-        <div class="item" onclick="openModal(2)">
-            <img src="img/black_mod.jpeg">
-            <h3>Black Moderate</h3>
-        </div>
-
-        <div class="item" onclick="openModal(4)">
-            <img src="img/bothanic_plush.jpeg">
-            <h3>Bothanic Plush</h3>
-        </div>
-
-        <div class="item" onclick="openModal(6)">
-            <img src="img/finesse_tec.jpeg">
-            <h3>Finesse</h3>
-        </div>
-
-        <div class="item" onclick="openModal(8)">
-            <img src="img/first_plush.jpeg">
-            <h3>First Plush</h3>
-        </div>
-
-        <div class="item" onclick="openModal(10)">
-            <img src="img/geocites.jpeg">
-            <h3>Geocites</h3>
-        </div>
-
+    <div class="item" onclick="openModal(2)">
+        <img src="img/black_mod.jpeg">
+        <h3>Black Moderate</h3>
     </div>
 
-    <!-- MODAL -->
-    <div id="modal" class="modal-bg">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal()">✖</span>
-            <span class="arrow arrow-left" onclick="prev()">❮</span>
-            <img id="modal-img">
-            <span class="arrow arrow-right" onclick="next()">❯</span>
-        </div>
+    <div class="item" onclick="openModal(4)">
+        <img src="img/bothanic_plush.jpeg">
+        <h3>Bothanic Plush</h3>
     </div>
 
-    <script>
-        const images = [
-            "img/georgia.jpeg",
-            "img/georgia_ficha.jpeg",
+    <div class="item" onclick="openModal(6)">
+        <img src="img/finesse_tec.jpeg">
+        <h3>Finesse</h3>
+    </div>
 
-            "img/black_mod.jpeg",
-            "img/black_mod_ficha.jpeg",
+    <div class="item" onclick="openModal(8)">
+        <img src="img/first_plush.jpeg">
+        <h3>First Plush</h3>
+    </div>
 
-            "img/bothanic_plush.jpeg",
-            "img/bothanic_plush_ficha.jpeg",
+    <div class="item" onclick="openModal(10)">
+        <img src="img/geocites.jpeg">
+        <h3>Geocites</h3>
+    </div>
 
-            "img/finesse_tec.jpeg",
-            "img/finesse_ficha.jpeg",
+    <!-- NOVOS COLCHÕES -->
+    <div class="item" onclick="openModal(12)">
+        <img src="img/heritage.jpeg">
+        <h3>Heritage</h3>
+    </div>
 
-            "img/first_plush.jpeg",
-            "img/first_plush_ficha.jpeg",
+    <div class="item" onclick="openModal(14)">
+        <img src="img/legacy.jpeg">
+        <h3>Legacy</h3>
+    </div>
 
-            "img/geocites.jpeg",
-            "img/geocites_ficha.jpeg"
-        ];
+    <div class="item" onclick="openModal(16)">
+        <img src="img/evolution.jpeg">
+        <h3>Evolution</h3>
+    </div>
 
-        let index = 0;
+</div>
 
-        function openModal(i) {
-            index = i;
-            document.getElementById("modal-img").src = images[index];
-            document.getElementById("modal").style.display = "flex";
-        }
+<div id="modal" class="modal-bg">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">✖</span>
+        <span class="arrow arrow-left" onclick="prev()">❮</span>
+        <img id="modal-img">
+        <span class="arrow arrow-right" onclick="next()">❯</span>
+    </div>
+</div>
 
-        function closeModal() {
-            document.getElementById("modal").style.display = "none";
-        }
+<script>
+const images = [
+    "img/georgia.jpeg","img/georgia_ficha.jpeg",
+    "img/black_mod.jpeg","img/black_mod_ficha.jpeg",
+    "img/bothanic_plush.jpeg","img/bothanic_plush_ficha.jpeg",
+    "img/finesse_tec.jpeg","img/finesse_ficha.jpeg",
+    "img/first_plush.jpeg","img/first_plush_ficha.jpeg",
+    "img/geocites.jpeg","img/geocites_ficha.jpeg",
 
-        function next() {
-            index = (index + 1) % images.length;
-            document.getElementById("modal-img").src = images[index];
-        }
+    /* NOVOS */
+    "img/heritage.jpeg","img/heritage_ficha.jpeg",
+    "img/legacy.jpeg","img/legacy_ficha.jpeg",
+    "img/evolution.jpeg","img/evolution_ficha.jpeg"
+];
 
-        function prev() {
-            index = (index - 1 + images.length) % images.length;
-            document.getElementById("modal-img").src = images[index];
-        }
-    </script>
+let index = 0;
+
+function openModal(i){
+    index = i;
+    document.getElementById("modal-img").src = images[index];
+    document.getElementById("modal").style.display = "flex";
+}
+function closeModal(){
+    document.getElementById("modal").style.display = "none";
+}
+function next(){
+    index = (index + 1) % images.length;
+    document.getElementById("modal-img").src = images[index];
+}
+function prev(){
+    index = (index - 1 + images.length) % images.length;
+    document.getElementById("modal-img").src = images[index];
+}
+</script>
 
 </body>
 </html>
